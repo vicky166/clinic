@@ -70,7 +70,7 @@ const Hero = () => {
           </div>
 
           <div className="mt-8">
-            <button className="group inline-flex items-center gap-2 px-6 py-3 bg-white text-emerald-900 rounded-full font-semibold hover:bg-emerald-100 transition-colors duration-300">
+            <button className="group inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-full font-semibold hover:bg-emerald-100 transition-colors duration-300">
               Book Consultation
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
