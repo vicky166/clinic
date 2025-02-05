@@ -57,10 +57,10 @@ export default function Team() {
   }, []);
 
   const cards = [
-    { name: "Dr. John Doe", field: "Medical Aesthetic Doctor", imageUrl: "/img/aris.png" },
-    { name: "Dr. Jane Smith", field: "Medical Aesthetic Doctor", imageUrl: "/img/preetha.png" },
-    { name: "Dr. Sarah Lee", field: "Medical Aesthetic Doctor", imageUrl: "/img/asvini.jpg" },
-    { name: "Dr. Alex White", field: "Medical Aesthetic Doctor", imageUrl: "/img/charm.png" },
+    { name: "Dr. ARIS", field: "Medical Aesthetic Doctor", imageUrl: "/img/aris.png" },
+    { name: "Dr. PREETHA", field: "Medical Aesthetic Doctor", imageUrl: "/img/preetha.png" },
+    { name: "Dr. ASHVINIA", field: "Medical Aesthetic Doctor", imageUrl: "/img/asvini.jpg" },
+    { name: "Dr. CHARMAINE", field: "Medical Aesthetic Doctor", imageUrl: "/img/charm.png" },
   ];
 
   return (

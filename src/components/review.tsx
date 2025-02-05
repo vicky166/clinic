@@ -1,6 +1,6 @@
 "use client";
 
-import {  CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -48,20 +48,20 @@ export default function Reviews() {
                       transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl overflow-hidden 
                       border border-transparent hover:border-green-400"
           >
-            {/* Glow Effect */}
             <div className="absolute inset-0 bg-white opacity-5 rounded-2xl lg:rounded-3xl transition-all duration-300 group-hover:opacity-10"></div>
 
-            {/* Hover Shine Effect */}
-            <div className="absolute -inset-10 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 
-                            group-hover:opacity-10 transition-opacity duration-500 
-                            animate-[shimmer_2s_infinite_linear]"></div>
-
+            <div
+              className="absolute -inset-10 bg-gradient-to-r from-transparent via-white to-transparent opacity-0  group-hover:opacity-10 transition-opacity duration-500  animate-[shimmer_2s_infinite_linear]"
+            ></div>
             <CardHeader>
               <CardTitle className="flex items-center justify-between text-lg text-white relative z-10">
                 <span className="font-semibold">{review.name}</span>
                 <div className="flex gap-1">
                   {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                    />
                   ))}
                 </div>
               </CardTitle>

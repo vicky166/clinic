@@ -11,18 +11,22 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Blog() {
   const posts = [
     {
-      title: "Pico Laser: The NON-Invasive Solution for Skin Tightening and Acne Scars Removal",
-      description: "The Perfect Skin of a young adult is on many people's wish lists.",
+      title:
+        "Pico Laser: The NON-Invasive Solution for Skin Tightening and Acne Scars Removal",
+      description:
+        "The Perfect Skin of a young adult is on many people's wish lists.",
       image: "/img/blog1.webp?height=300&width=600",
     },
     {
       title: "PICO LASER MALAYSIA 2025: PRICE AND EVOLUTIONS",
-      description: "Start your Pico journey now! If you're considering Pico Laser treatment, it's essential to understand...",
+      description:
+        "Start your Pico journey now! If you're considering Pico Laser treatment, it's essential to understand...",
       image: "/img/blog2.webp?height=300&width=600",
     },
     {
       title: "Media Review on Fraction CO2 Laser Treatment by Cosmopolitan",
-      description: "Nana, editor of Cosmopolitan, visited Medivion UOA Clinic for media reviews on Fraction CO2 laser...",
+      description:
+        "Nana, editor of Cosmopolitan, visited Medivion UOA Clinic for media reviews on Fraction CO2 laser...",
       image: "/img/blog3.jpg?height=300&width=600",
     },
   ];
@@ -30,7 +34,7 @@ export default function Blog() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    cardRefs.current = cardRefs.current.slice(0, posts.length); 
+    cardRefs.current = cardRefs.current.slice(0, posts.length);
 
     const ctx = gsap.context(() => {
       cardRefs.current.forEach((card, index) => {
@@ -73,9 +77,7 @@ export default function Blog() {
           <Link key={index} href="#" className="group block">
             <article
               className="relative overflow-hidden bg-gradient-to-r from-green-700 to-green-900 backdrop-blur-md border border-gray-800 rounded-3xl p-6 space-y-6 shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300"
-              ref={() => {
-                
-              }}
+              ref={() => {}}
             >
               <div className="relative h-48 rounded-2xl overflow-hidden">
                 <Image
@@ -95,7 +97,6 @@ export default function Blog() {
                   {post.description}
                 </p>
               </div>
-
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/2 0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </article>
           </Link>

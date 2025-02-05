@@ -9,21 +9,19 @@ import Reviews from "@/components/review";
 import Team from "@/components/team";
 import { Treatments } from "@/components/treatment";
 
-
 export default function Home() {
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <Header/>
-    <Products/>
-    <Treatments/>
-    <Team/>
-    <Faq/>
-    <Blog/>
-    <Reviews/>
-    <Footer/>
-    
+      <Navbar />
+      <Hero />
+      <Header />
+      <Products />
+      <Treatments />
+      <Team />
+      <Faq />
+      <Blog />
+      <Reviews />
+      <Footer />
     </>
   );
 }
