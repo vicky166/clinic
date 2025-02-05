@@ -95,7 +95,7 @@ export const Treatments = () => {
     <section ref={sectionRef} className="container mx-auto px-4 py-16">
       <div className="grid lg:grid-cols-5 gap-12 items-center">
         <div className="lg:col-span-2 space-y-6">
-          <span className="inline-block px-4 py-1 text-sm border border-black bg-green-500 text-black rounded-full">
+          <span className="inline-block px-4 py-1 text-sm border border-black bg-black text-white rounded-full">
             Types Of Laser Treatments
           </span>
 

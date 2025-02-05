@@ -147,7 +147,7 @@ export const Products = () => {
           {products.map((product, index) => (
             <div
               key={index}
-              className="min-w-[320px] max-w-[350px] bg-gradient-to-r from-green-700 to-green-800  p-6 sm:p-8 lg:p-10 rounded-2xl shadow-lg flex flex-col justify-between"
+              className="min-w-[320px] max-w-[350px] bg-gradient-to-br from-emerald-900 to-emerald-700 p-6 sm:p-8 lg:p-10 rounded-2xl shadow-lg flex flex-col justify-between"
             >
               <img
                 src={product.imageUrl}

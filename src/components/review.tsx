@@ -36,7 +36,7 @@ export default function Reviews() {
 
   return (
     <section className="py-16 px-6 max-w-7xl mx-auto text-white">
-      <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-700 drop-shadow-lg">
+      <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-black drop-shadow-lg">
         What Our Clients Say
       </h2>
 
@@ -44,7 +44,7 @@ export default function Reviews() {
         {reviews.map((review, index) => (
           <div
             key={index}
-            className="relative group bg-gradient-to-r from-green-700 to-green-900 p-6 sm:p-8 lg:p-10 rounded-2xl lg:rounded-3xl shadow-xl 
+            className="relative group bg-gradient-to-br from-emerald-900 to-emerald-700 p-6 sm:p-8 lg:p-10 rounded-2xl lg:rounded-3xl shadow-xl 
                       transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl overflow-hidden 
                       border border-transparent hover:border-green-400"
           >

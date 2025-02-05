@@ -97,7 +97,7 @@ export default function Faq() {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="bg-gradient-to-r from-green-700 to-green-900 rounded-2xl overflow-hidden"
+            className="bg-gradient-to-br from-emerald-700 to-emerald-700 rounded-2xl overflow-hidden"
             ref={(el) => {
               faqRefs.current[index] = el;
             }}

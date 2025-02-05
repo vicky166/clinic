@@ -6,7 +6,7 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <section className="container mx-auto px-4 py-8 sm:py-12 md:py-16">
-      <div className="bg-gradient-to-r from-green-700 to-green-900 p-6 sm:p-8 lg:p-12 rounded-2xl shadow-lg">
+      <div className="bg-gradient-to-br from-emerald-900 to-emerald-700 p-6 sm:p-8 lg:p-12 rounded-2xl shadow-lg">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl text-white font-semibold leading-tight">
           Fractional CO2 Laser – How Does It Work?
         </h2>

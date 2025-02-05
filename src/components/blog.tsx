@@ -34,7 +34,7 @@ const BlogSection = () => {
     <section className="py-16 ">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-green-400 to-green-700 drop-shadow-lg bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mb-4 bg-black drop-shadow-lg bg-clip-text text-transparent">
             Latest Insights
           </h2>
           <p className="text-black max-w-2xl mx-auto">
@@ -45,7 +45,7 @@ const BlogSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
             <Link href="#" key={index} className="group">
-              <Card className="h-full overflow-hidden bg-gradient-to-r from-green-700 to-green-900 border-gray-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+              <Card className="h-full overflow-hidden bg-gradient-to-br from-emerald-900 to-emerald-700 border-gray-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
                 <CardContent className="p-0">
                   <div className="relative h-56 overflow-hidden">
                     <Image
