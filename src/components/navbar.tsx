@@ -12,12 +12,8 @@ const Navbar = () => {
     <nav className="bg-black fixed shadow-md top-0 w-full z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
-          <Image
-            src="/img/logo.png"
-            alt="Clinic Logo"
-            width={120}
-            height={40}
-          />
+        <img src="/img/logo.png" alt="Nexus Clinic Logo" className="w-36 h-auto mb-4" /> 
+
         </div>
 
         <div className="flex items-center bg-white ml-2 rounded-lg px-3 py-1">
