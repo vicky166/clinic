@@ -34,7 +34,7 @@ const BlogSection = () => {
     <section className="py-16 ">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-green-400 to-green-700 drop-shadow-lg bg-clip-text text-transparent">
             Latest Insights
           </h2>
           <p className="text-black max-w-2xl mx-auto">
