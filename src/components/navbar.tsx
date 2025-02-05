@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X, Home, Info, Briefcase, Phone, Search } from "lucide-react";
 
 const Navbar = () => {
