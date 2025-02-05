@@ -57,10 +57,26 @@ export default function Team() {
   }, []);
 
   const doctors = [
-    { name: "Dr. ARIS", field: "Medical Aesthetic Doctor", imageUrl: "/img/aris.png" },
-    { name: "Dr. PREETHA", field: "Medical Aesthetic Doctor", imageUrl: "/img/preetha.png" },
-    { name: "Dr. ASHVINIA", field: "Medical Aesthetic Doctor", imageUrl: "/img/asvini.jpg" },
-    { name: "Dr. CHARMAINE", field: "Medical Aesthetic Doctor", imageUrl: "/img/charm.png" },
+    {
+      name: "Dr. ARIS",
+      field: "Medical Aesthetic Doctor",
+      imageUrl: "/img/aris.png",
+    },
+    {
+      name: "Dr. PREETHA",
+      field: "Medical Aesthetic Doctor",
+      imageUrl: "/img/preetha.png",
+    },
+    {
+      name: "Dr. ASHVINIA",
+      field: "Medical Aesthetic Doctor",
+      imageUrl: "/img/asvini.jpg",
+    },
+    {
+      name: "Dr. CHARMAINE",
+      field: "Medical Aesthetic Doctor",
+      imageUrl: "/img/charm.png",
+    },
   ];
 
   return (
@@ -70,7 +86,8 @@ export default function Team() {
           Meet Our Doctors
         </h2>
         <p className="text-lg text-gray-600">
-          Our team of experts dedicated to providing the best treatments for you.
+          Our team of experts dedicated to providing the best treatments for
+          you.
         </p>
       </div>
 
@@ -92,24 +109,19 @@ export default function Team() {
                 className="transition-transform duration-500 ease-out group-hover:scale-110"
               />
             </div>
-
-            {/* Gradient Overlay - Always visible but more subtle by default */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-40 group-hover:opacity-80 transition-opacity duration-300" />
-
-            {/* Content Container */}
             <div className="absolute inset-0 flex flex-col justify-end p-6">
-              {/* Name - Always visible but transforms on hover */}
               <h3 className="text-2xl font-semibold text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                 {doctor.name}
               </h3>
-              
-              {/* Role - Hidden by default, slides up on hover */}
+
               <div className="transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-100">
                 <p className="text-lg text-white/90 mt-2">{doctor.field}</p>
-                
-                {/* Additional content that appears on hover */}
+
                 <div className="mt-4 space-y-2">
-                  <p className="text-sm text-white/80">Available for consultations</p>
+                  <p className="text-sm text-white/80">
+                    Available for consultations
+                  </p>
                   <button className="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full text-sm backdrop-blur-sm transition-colors duration-300">
                     Book Appointment
                   </button>

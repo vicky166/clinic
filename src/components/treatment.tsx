@@ -1,6 +1,6 @@
-'use client';
-import Image from "next/image";
+"use client";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -15,118 +15,103 @@ export const Treatments = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Animate heading
       gsap.fromTo(
         headingRef.current,
-        { y: 50, scale: 0.9, opacity: 0 },
+        { y: 50, opacity: 0 },
         {
           y: 0,
-          scale: 1,
           opacity: 1,
           duration: 1,
-          ease: "power3.out",
           scrollTrigger: {
             trigger: headingRef.current,
             start: "top 80%",
-            end: "top 60%",
-            scrub: false,
           },
         }
       );
 
-      gsap.fromTo(
-        paragraphRef1.current,
-        { y: 50, scale: 0.9, opacity: 0 },
-        {
-          y: 0,
-          scale: 1,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: paragraphRef1.current,
-            start: "top 85%",
-            end: "top 65%",
-            scrub: false,
-          },
-        }
-      );
-
-      gsap.fromTo(
-        paragraphRef2.current,
-        { y: 50, scale: 0.9, opacity: 0 },
-        {
-          y: 0,
-          scale: 1,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: paragraphRef2.current,
-            start: "top 85%",
-            end: "top 65%",
-            scrub: false,
-          },
-        }
-      );
-
-      gsap.fromTo(
-        imageRef.current,
-        { y: 50, scale: 0.9, opacity: 0 },
-        {
-          y: 0,
-          scale: 1,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: imageRef.current,
-            start: "top 85%",
-            end: "top 65%",
-            scrub: false,
-          },
-        }
-      );
+      // Animate paragraphs and image
+      [paragraphRef1.current, paragraphRef2.current, imageRef.current].forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+            },
+          }
+        );
+      });
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} className="container mx-auto px-4 py-16">
+    <section ref={sectionRef} className="container mx-auto px-4 py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="grid lg:grid-cols-5 gap-12 items-center">
-        <div className="lg:col-span-2 space-y-6">
-          <span className="inline-block px-4 py-1 text-sm border border-black bg-black text-white rounded-full">
-            Types Of Laser Treatments
-          </span>
+        <div className="lg:col-span-2 space-y-8">
+          <div className="space-y-6">
+            <span className="inline-block px-6 py-2 text-sm bg-emerald-50 text-emerald-800 font-medium rounded-full shadow-sm">
+              Innovative Laser Solutions
+            </span>
 
-          <h2
-            ref={headingRef}
-            className="text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.1]"
-          >
-            Types Of Laser Treatments
-          </h2>
+            <h2
+              ref={headingRef}
+              className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent"
+            >
+              Advanced Laser Treatments
+            </h2>
+          </div>
 
-          <p ref={paragraphRef1} className="text-black text-sm max-w-lg">
-            <strong>Deka Laser Treatment:</strong> This treatment creates microscopic channels that go into the second layer of skin through the epidermis to boost collagen production and reduce age spots, wrinkles, acne scarring, and loose skin texture.
-          </p>
+          <div ref={paragraphRef1} className="bg-gradient-to-br from-emerald-900 to-emerald-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div className="flex items-center gap-4 mb-4">
+              <span className="w-12 h-12 flex items-center justify-center  rounded-xl">
+                <span className="text-2xl">✨</span>
+              </span>
+              <h3 className="text-xl font-semibold text-black ">Deka Laser Treatment</h3>
+            </div>
+            <p className="text-white  leading-relaxed">
+              Creates microscopic channels that penetrate the epidermis, boosting collagen production and reducing age spots, wrinkles, acne scarring, and loose skin texture.
+            </p>
+          </div>
 
-          <p ref={paragraphRef2} className="text-black text-sm max-w-lg">
-            <strong>Fraxel Laser:</strong> Fractional laser treatment also improves the quality of skin texture and tone. This advanced treatment works deeply into the skin to make it look younger and better from the outside. The process effectively treats acne scars, brown spots, sun damage, fine lines, and other skin issues.
-          </p>
+          <div ref={paragraphRef2} className="bg-gradient-to-br from-emerald-900 to-emerald-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div className="flex items-center gap-4 mb-4">
+              <span className="w-12 h-12 flex items-center justify-center bg-emerald-100 rounded-xl">
+                <span className="text-2xl">⚡</span>
+              </span>
+              <h3 className="text-xl font-semibold text-black">Fraxel Laser</h3>
+            </div>
+            <p className="text-white leading-relaxed">
+              Advanced treatment that improves skin texture and tone. Effectively treats acne scars, brown spots, sun damage, fine lines, and other skin concerns for a younger, healthier appearance.
+            </p>
+          </div>
         </div>
 
-        <div
-          ref={imageRef}
-          className="lg:col-span-3 relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-violet-100/50 mix-blend-multiply z-10"></div>
-          <Image
-            src="/img/laser.jpg" 
-            alt="Laser Treatment"
-            fill
-            className="object-cover"
-            priority
-          />
+        <div className="lg:col-span-3 space-y-6">
+          <div
+            ref={imageRef}
+            className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-30" />
+            <Image
+              src="/img/laser.jpg"
+              alt="Advanced Laser Treatment Technology"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              priority
+            />
+            <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
+              <p className="text-black text-lg font-medium">
+                Experience the future of skincare with our state-of-the-art laser treatments
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
