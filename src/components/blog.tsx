@@ -1,107 +1,95 @@
-"use client";
+"use client"
+import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { CalendarDays, Clock, ArrowRight } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
-export default function Blog() {
+const BlogSection = () => {
   const posts = [
     {
-      title:
-        "Pico Laser: The NON-Invasive Solution for Skin Tightening and Acne Scars Removal",
-      description:
-        "The Perfect Skin of a young adult is on many people's wish lists.",
-      image: "/img/blog1.webp?height=300&width=600",
+      title: "Pico Laser: The NON-Invasive Solution for Skin Tightening",
+      description: "The Perfect Skin of a young adult is on many people's wish lists. Discover how Pico Laser technology is revolutionizing skincare treatments.",
+      image: "/img/blog1.webp",
+      readTime: "5 min",
+      date: "Feb 2025"
     },
     {
       title: "PICO LASER MALAYSIA 2025: PRICE AND EVOLUTIONS",
-      description:
-        "Start your Pico journey now! If you're considering Pico Laser treatment, it's essential to understand...",
-      image: "/img/blog2.webp?height=300&width=600",
+      description: "Start your Pico journey now! Understanding the latest developments and pricing in Pico Laser treatments.",
+      image: "/img/blog2.webp",
+      readTime: "4 min",
+      date: "Jan 2025"
     },
     {
-      title: "Media Review on Fraction CO2 Laser Treatment by Cosmopolitan",
-      description:
-        "Nana, editor of Cosmopolitan, visited Medivion UOA Clinic for media reviews on Fraction CO2 laser...",
-      image: "/img/blog3.jpg?height=300&width=600",
-    },
+      title: "Media Review on Fraction CO2 Laser Treatment",
+      description: "Nana, editor of Cosmopolitan, visited Medivion UOA Clinic for media reviews on Fraction CO2 laser treatments.",
+      image: "/img/blog3.jpg",
+      readTime: "6 min",
+      date: "Dec 2024"
+    }
   ];
 
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    cardRefs.current = cardRefs.current.slice(0, posts.length);
-
-    const ctx = gsap.context(() => {
-      cardRefs.current.forEach((card, index) => {
-        if (card) {
-          gsap.fromTo(
-            card,
-            { opacity: 0, y: 80, scale: 0.9 },
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: 1,
-              ease: "power3.out",
-              delay: index * 0.2,
-              scrollTrigger: {
-                trigger: card,
-                start: "top 90%",
-                end: "top 75%",
-                scrub: false,
-              },
-            }
-          );
-        }
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section className="container mx-auto px-6 py-16 text-white">
-      <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold bg-gradient-to-r from-green-400 to-green-800 bg-clip-text text-transparent drop-shadow-lg">
-          Related Blogs
-        </h2>
-      </div>
+    <section className="py-16 ">
+      <div className="container mx-auto px-4">
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+            Latest Insights
+          </h2>
+          <p className="text-black max-w-2xl mx-auto">
+            Discover the latest trends and innovations in skincare and beauty treatments
+          </p>
+        </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {posts.map((post, index) => (
-          <Link key={index} href="#" className="group block">
-            <article
-              className="relative overflow-hidden bg-gradient-to-r from-green-700 to-green-900 backdrop-blur-md border border-gray-800 rounded-3xl p-6 space-y-6 shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl duration-300"
-              ref={() => {}}
-            >
-              <div className="relative h-48 rounded-2xl overflow-hidden">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-
-              <div className="space-y-4">
-                <h2 className="text-2xl font-semibold leading-tight text-gray-100 group-hover:text-black transition-colors duration-300">
-                  {post.title}
-                </h2>
-
-                <p className="text-sm text-black transition-colors duration-300 group-hover:text-gray-200">
-                  {post.description}
-                </p>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/2 0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </article>
-          </Link>
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post, index) => (
+            <Link href="#" key={index} className="group">
+              <Card className="h-full overflow-hidden bg-gradient-to-r from-green-700 to-green-900 border-gray-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+                <CardContent className="p-0">
+                  <div className="relative h-56 overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60" />
+                  </div>
+                  
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center space-x-4 text-sm text-black">
+                      <span className="flex items-center">
+                        <CalendarDays className="w-4 h-4 mr-2" />
+                        {post.date}
+                      </span>
+                      <span className="flex items-center">
+                        <Clock className="w-4 h-4 mr-2" />
+                        {post.readTime}
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-xl font-semibold text-black group-hover:text-emerald-400 transition-colors duration-300">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-white text-sm line-clamp-2">
+                      {post.description}
+                    </p>
+                    
+                    <div className="pt-4 flex items-center text-emerald-400 text-sm font-medium">
+                      Read More
+                      <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default BlogSection;
